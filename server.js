@@ -28,9 +28,9 @@ app.use('/api/user', userRoutes);
 app.get("/", (req, res, next) => {
     res.json({ msg: "welcome TO the app " })
 });
-app.all("*", (req, res, next) => {
-    next(res.status(404).json("Can't find this route"));
-});
+// app.all("*", (req, res, next) => {
+//     next(res.status(404).json("Can't find this route"));
+// });
 // connect to database 
 mongoose.set('strictQuery', false);
 mongoose.connect(process.env.MONGODB).then(() => {
